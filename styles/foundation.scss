@@ -1,0 +1,837 @@
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// This includes all of the foundation global elements that are needed to work with any of the other files.
+@import "foundation/variables";
+
+@import "normalize";
+
+// Foundation Components
+@import
+  "foundation/components/global",
+  "foundation/components/grid",
+  "foundation/components/offcanvas",
+  "foundation/components/visibility",
+  "foundation/components/block-grid",
+  "foundation/components/type",
+  "foundation/components/buttons",
+  "foundation/components/forms",
+  "foundation/components/custom-forms",
+  //"foundation/components/button-groups",
+  //"foundation/components/dropdown-buttons",
+  //"foundation/components/split-buttons",
+  "foundation/components/flex-video",
+  "foundation/components/section",
+  "foundation/components/top-bar",
+  //"foundation/components/orbit",
+  "foundation/components/reveal",
+  //"foundation/components/joyride",
+  //"foundation/components/clearing",
+  //"foundation/components/alert-boxes",
+  "foundation/components/breadcrumbs",
+  //"foundation/components/keystrokes",
+  //"foundation/components/labels",
+  //"foundation/components/inline-lists",
+  //"foundation/components/pagination",
+  //"foundation/components/panels",
+  //"foundation/components/pricing-tables",
+  //"foundation/components/progress-bars",
+  //"foundation/components/side-nav",
+  //"foundation/components/sub-nav",
+  //"foundation/components/switch",
+  //"foundation/components/magellan",
+  //"foundation/components/tables",
+  //"foundation/components/thumbs",
+  //"foundation/components/tooltips",
+  //"foundation/components/dropdown",
+
+  // My created scss files
+
+"foundation/components/icons",
+"foundation/components/flexslider",
+"foundation/components/mediaelementplayer";
+
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=0a0e1af0-13b3-4278-b4fc-e2ed2e473e3d");
+@font-face{
+font-family:"Frutiger";
+src:url("/fonts/af97a512-f55a-4f61-b2ce-659c883930fc.eot?#iefix");
+src:url("/fonts/af97a512-f55a-4f61-b2ce-659c883930fc.eot?#iefix") format("eot"),url("/fonts/3fbbd6b1-cfa7-4ff0-97ea-af1b2c489f15.woff") format("woff"),url("/fonts/076311f8-a01b-4389-a5eb-334a62e62d45.ttf") format("truetype"),url("/fonts/c59a36ab-4ef8-4ee1-a2f8-48aa79d4f877.svg#c59a36ab-4ef8-4ee1-a2f8-48aa79d4f877") format("svg");
+}
+@font-face{
+font-family:"FrutigerBold";
+src:url("/fonts/fbd7c0fb-f004-4e83-81d2-1d400413a873.eot?#iefix");
+src:url("/fonts/fbd7c0fb-f004-4e83-81d2-1d400413a873.eot?#iefix") format("eot"),url("/fonts/9aa32a81-1124-4c43-b3db-15bfb1f7aed2.woff") format("woff"),url("/fonts/6faffbf4-f8e8-4817-b24b-a390e166be7e.ttf") format("truetype"),url("/fonts/fc09de64-de25-425e-90dc-a0cae29b02c4.svg#fc09de64-de25-425e-90dc-a0cae29b02c4") format("svg");
+}
+@font-face{
+font-family:"FrutigerBoldCn";
+src:url("/fonts/a3a15351-8e3c-4c29-82e6-15b106c2181f.eot?#iefix");
+src:url("/fonts/a3a15351-8e3c-4c29-82e6-15b106c2181f.eot?#iefix") format("eot"),url("/fonts/f1f95a55-f0c6-4fb5-8939-b93160b7a751.woff") format("woff"),url("/fonts/032fd83c-fe79-47fa-9dda-0a3f03bd0506.ttf") format("truetype"),url("/fonts/17f04727-b70e-460f-8b5c-c8cd21771240.svg#17f04727-b70e-460f-8b5c-c8cd21771240") format("svg");
+}
+
+@mixin frutiger {
+  font-family: "Frutiger", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+@mixin frutigerBold {
+  font-family: "FrutigerBold", "Helvetica Neue Bold", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+@mixin frutigerBoldCn {
+  font-family: "FrutigerBoldCn", "FrutigerBold", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+@mixin Arial {
+  font-family: Arial, Helvetica, "Lucida Grande", sans-serif; 
+}
+
+html {
+  background: #000;
+}
+
+ul, ol {
+  list-style-position: outside;
+  margin-left: 16px;
+}
+
+a, a:visited {
+  //text-transform: uppercase;
+}
+
+a:hover, a:active {
+  //text-decoration: underline;
+}
+
+/////////////////////  COLORS  ////////////////////////
+
+$white: #fff;
+$black: #000;
+$red: #b50803;
+
+//////////////////////  GENERIC  ////////////////////////
+h1 {
+  @include frutigerBold;
+  font-size: 2.14285714286em;
+  line-height: 1.0em;
+  margin-top: 0.33335em;  
+  margin-bottom: 0.33335em;
+}
+
+h2 {
+  @include frutigerBold;
+  font-size: 1.64285714286em;
+  line-height: 1.2em; /* 40px */
+  margin-top: 0.90435em;  
+  margin-bottom: 0.50435em;
+}
+
+h3 {
+  @include frutigerBold;
+  font-size: 1.28571428571em;
+  line-height: 1.2em;
+  margin-top: 0;
+  margin-bottom: 0.55555em;
+}
+
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.28571428571em;
+  line-height: 1.2em;
+  text-transform: none;
+  margin-top: 0.65555em;  
+  margin-bottom: 0.65555em;
+}
+
+h5 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.14285714286em;
+  line-height: 1.2em;
+  text-transform: none;
+  line-height: 1.2500em; /* 20px */
+  margin-top: 0.725em;  
+  margin-bottom: 0.725em;
+}
+
+h6 {
+  @include frutigerBold;
+  font-size: 1em;
+  line-height: 1.2em;
+  line-height: 1.4286em; /* 20px */
+  margin-top: 0.8143em;  
+  margin-bottom: 0.8143em;
+}
+
+.clear {
+  clear: both;
+}
+
+.hide {
+  display: none;
+}
+
+.main-row {
+  background: $black url(../images/mobile-bg.jpg) top no-repeat;
+  min-height: 300px;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  -o-background-size: 100% auto;
+  background-size: 100% auto;
+}
+
+// HEADER 
+#header {
+  background: url(../images/mobile-header-bg.png) repeat-x;
+}
+
+#header a {
+  text-transform: uppercase;
+}
+
+#header a:hover, #header a:active {
+  text-decoration: none;
+}
+
+
+.logo-box {
+  height: 100%;
+  background: white;
+  text-align: center;
+}
+
+.logo-box a {  
+  display: block;
+}
+
+a.logo {
+  display: block;
+  //max-width: 142px;
+}
+
+.top-bar {
+  //z-index: 10;
+  background: none;
+  width: 100%;
+  margin: 0;
+  float: none;
+}
+
+.top-bar-section {
+  @include frutigerBoldCn;
+}
+
+.top-bar-section ul {
+  list-style: none;
+}
+
+.top-bar .toggle-topbar.menu-icon a {
+  top: 20px;
+}
+
+#header > div, #header > div > div {
+  height: auto;
+}
+
+.top-bar-section > ul > li > a {
+  height: auto;
+  line-height: 1.4em;
+  background: $black;
+}
+
+.top-bar-section a:hover, .top-bar-section li:hover a {
+  background: $red !important;
+}
+
+.top-bar-section .has-dropdown .dropdown li.has-dropdown > a:after {
+  margin-top: -27px;
+}
+
+
+.top-bar-section .dropdown li a {
+  color: #3d383c;
+  line-height: 30px;
+  height: 30px;
+}
+
+.top-bar-section > ul > li a, .top-bar-section .has-dropdown > a {
+  padding: 12px !important;
+}
+
+.top-bar-section .has-dropdown > a:after {
+  border: 0
+}
+
+.top-bar .toggle-topbar.menu-icon {
+  left: 0;
+  top: 12px;
+}
+
+a.mobile-follow {
+  display: block;
+  position: absolute; 
+  top: 23px;
+  right: 10px;
+  width: 63px;
+  height: 26px;
+}
+
+.mobile-follow img {
+  vertical-align: top;
+}
+
+// HEADER NAV DROPDOWN
+
+form.custom .custom.dropdown ul {
+  -webkit-box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 2px 0px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 0;
+  background: white;
+  border: solid 1px #cccccc;
+  font-size: 14px;
+}
+
+form.custom .custom.dropdown ul li {
+  color: #555555;
+  font-size: 1em;
+  cursor: default;
+  padding-top: 0.14286em;
+  padding-bottom: 0.14286em;
+  padding-left: 0.42857em;
+  padding-right: 2.71429em;
+  min-height: 1.71429em;
+  line-height: 1.71429em;
+  margin: 0;
+  white-space: nowrap;
+  list-style: none;
+}
+
+.custom div.custom.dropdown {
+  font-size: 1em;
+  margin: 0 0 1em 0;
+  padding: 0.5em;
+  height: 2.42857em;
+}
+
+#form-error ul {
+  margin: 0;
+}
+
+#form-error {
+  margin: 0 0 10px;
+}
+
+form.custom .custom.dropdown .selector {
+  height: 2.42857em; 
+}
+
+form.custom .custom.dropdown .current {
+  line-height: 1.45714em
+}
+
+////////////////// NAV OVERRIDES ///////////////////////
+
+.top-bar .title-area {
+  //width: 53.125%;
+  width: 10%;
+  height: 58px;
+}
+
+.top-bar.expanded .title-area {
+  background: none;
+}
+
+a.logo {
+  position: absolute;
+  top: 0;
+  left: 50px;
+}
+
+a.logo img {
+    //width: 170px;
+}
+
+.top-bar .toggle-topbar {
+  position: absolute;
+  width: 50px;
+}
+
+.top-bar .toggle-topbar.menu-icon {
+  padding: 0;
+}
+
+.top-bar .name {
+  left: 50px;
+}
+
+.top-bar-section .has-dropdown .dropdown li.has-dropdown > a:after {
+  content: "";
+}
+
+.title-area {
+  margin: 0;
+}
+
+.dropdown .back h5 {
+  margin: 0;
+}
+
+.top-bar .dropdown {
+  height: auto !important;
+}
+
+.dropdown .back h5 a {
+  margin: 0;
+  line-height: 40px !important;
+  height: 40px !important;
+  background: #2576b5 !important
+}
+
+// SOCIAL HEADER
+#social-drop, #search-drop {
+  padding: 13px 0 0 0;
+  background: #000;
+  width: 82px;
+  position: absolute;
+  top: 58px;
+  right: 0;
+}
+
+#search-drop {
+  width: 210px;
+  padding: 13px 10px 0 10px;
+}
+
+#social-drop a {
+  margin: 0 0 10px 10px;
+  display: block;
+  float: left;
+  width: 26px;
+  height: 26px;
+} 
+
+////////////////// FOOTER ///////////////////////
+
+
+.site-footer {
+  text-align: center;
+  color: white;
+  background: #000;
+  padding: 20px 0;
+}
+  
+.site-footer p {
+  font-size: 0.85714285714em;
+  margin: 0
+}
+
+.site-footer a {
+  padding: 0 5px;
+  color: white;
+  text-transform: uppercase;
+}
+
+////////////////// INTERIOR  ////////////////////
+.main-row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 100%;
+  *zoom: 1;
+}
+
+/////////////// FLEX SLIDER ///////////////
+
+.flexslider {
+  background: none;
+  border: 0;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0;
+}
+
+.flex-control-nav {
+  bottom: 5px;
+}
+
+#carousel {
+  margin: 20px 0 10px;
+}
+
+.home .flexslider {
+  background: #e4e4e4;
+}
+
+#slider .slides > li {
+  margin: 0
+}
+
+.flex-margin li, #carousel .slides li {
+  margin: 0 10px 0 0
+}
+
+
+::-webkit-input-placeholder {
+   color: #898989;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #898989;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #898989;  
+}
+
+:-ms-input-placeholder {  
+   color: #898989;  
+}
+
+.contact-form div.custom.dropdown {
+  background: #dadada;
+  font-size: 1em;
+  margin: 0 0 1em 0;
+  padding: 0.5em;
+  height: 2.42857em;
+}
+
+form.custom .custom.dropdown .selector {
+  height: 2.42857em; 
+}
+
+form.custom .custom.dropdown .current {
+  line-height: 1.45714em
+}
+
+.contact-form div.custom.dropdown .selector:after {
+  border-color: #09558a transparent transparent transparent;
+}
+
+.contact-form .submit-btn {
+  clear: both;
+  background: $black;
+  text-align: center;
+  margin: 0 auto;
+  width: 170px;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+}
+
+#form-error {
+  font-size: 0.78571428571em;
+  color: #e74d98;
+  margin: 0 0 10px;
+}
+
+#form-error ul {
+  list-style: none;
+  margin: 0;
+}
+
+// NAV
+.js #nav { display: none; }
+.js .selectnav { display: block; }
+
+@media only screen and (min-width : 768px) {
+  .main-row {
+    background: $black url(../images/tablet-bg.jpg) top no-repeat;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+  }
+
+  .top-bar .title-area {
+    height: 63px;
+  }
+
+  .top-bar {
+    height: 58px;
+    width: 80%;
+    float: left;
+  }
+
+  a.logo {
+    position: relative;
+    left: 5px; 
+  }
+
+  a.logo img, .top-bar .title-area {
+    width: 195px;
+    max-width: 195px;
+  }
+
+  .top-bar-section {
+    position: relative;
+    float: left;
+    width: 65.96491228%;
+    padding: 0 0 0 10px;
+  }
+
+  .top-bar-section li a:not(.button) {
+    background: none;
+  }
+
+  .social-search {
+    width: 19%;
+    margin: 22px 0 0;
+    float: right;
+  }
+
+  a.search-small {
+    position: relative;
+    display: block;
+    float: right;
+    margin: 0 10px 0 0;
+    width: 26px;
+    height: 26px;
+  }
+
+  a.mobile-follow {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 10px 0 0;
+    display: block;
+    float: right;
+  }
+
+  .pattern {
+    padding: 0; 
+    line-height: 1;
+    max-width: 215px;
+    vertical-align: middle;
+  }
+  .f {
+     position: relative; 
+  }
+
+  input {
+    display: block;
+  }
+
+  input[type=search], input[type=search]:focus {
+    width: 100%;
+    padding: 0;
+    height: 26px;
+    line-height: 26px;
+    text-indent: 10px;
+    position: relative;
+    top: 0;    
+    background: #363738;
+    border: 0;
+    color: #898989;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+
+  input[type=submit] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    padding: 0;
+    cursor: pointer;
+    text-indent: -9999em;
+    width: 26px;
+    height: 26px;
+    border: 0;
+    display: block;
+    background: url(../images/search.png) no-repeat;
+  }
+
+  .top-bar-section > ul > li a, .top-bar-section .has-dropdown > a {
+    padding: 0 12px !important;
+  }
+}
+
+
+@media #{$screen} { }
+
+/*@media #{$small-max} {
+  h1, h2, h3, h4, h5, h6, p, a {
+  }
+
+  .logo-box {
+    text-align: left;
+  }
+
+  .logo-box img {
+    //width: 116px;
+  }
+
+  header {
+    background: $black;
+    //height: 140px;
+  }
+
+  #header > div, #header > div > div {
+    height: auto;
+  }
+
+  a.logo {
+    max-width: 285px;
+  }
+
+  .top-bar-section {
+    position: relative;
+    top: 0;
+  }
+
+  .top-bar-section ul li a {
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    background: $black !important;
+    //padding: 12px 0;
+  }
+
+  .title.back h5 a {
+    @include frutigerBold;
+    margin: 0;
+  }
+}
+
+@media #{$small} { 
+  header {
+    background: $black;
+  }
+
+  .top-bar .title-area {
+    width: 44.316546762%;
+  }
+
+  .top-bar {
+    z-index: 10;
+    background: none;
+    width: 57.916666666%;
+  }
+  .top-bar-section {
+    width: 55.402877697%;
+    overflow: hidden;
+    float: left;
+  }
+
+  .top-bar .name {
+    left: 0;
+  }
+
+  .top-bar-section .dropdown li a {
+    color: #3d383c;
+    background: $black !important;
+  }
+
+  .top-bar-section > ul > li > a {
+    background: none !important;
+  }
+
+  // HEADER -- Right side
+  .is-vishidden {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+
+  .social-search {
+    float: left;
+    width: 32.666666666%;
+    overflow: hidden;
+    margin: 39px 0 0;
+  }
+
+  #search {
+    width: 55.102040816%;
+    float: left;
+  }
+
+  #social {
+    width: 44.897959184%;
+    float: right;
+  }
+
+  #social ul {
+    margin: 0;
+    list-style: none;
+  }
+
+  #social li {
+    float: right;
+    margin: 0 4px 0 0;
+  }
+
+  #social li:first-child {
+    margin: 0;
+  }
+
+  #social li a {
+    display: block;
+    width: 26px;
+    height: 26px;
+  }
+
+  .pattern {
+    padding: 0; 
+    line-height: 1;
+    max-width: 215px;
+    vertical-align: middle;
+  }
+  .f {
+     position: relative; 
+  }
+
+  input {
+    display: block;
+  }
+
+  input[type=search], input[type=search]:focus {
+    width: 100%;
+    padding: 0;
+    height: 26px;
+    line-height: 26px;
+    text-indent: 10px;
+    position: relative;
+    top: 0;
+    background: #363738;
+    border: 0;
+    color: #898989;
+  }
+
+
+  input[type=submit] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    padding: 0;
+    cursor: pointer;
+    text-indent: -9999em;
+    width: 26px;
+    height: 26px;
+    border: 0;
+    display: block;
+    background: url(../images/search.png) no-repeat;
+  }
+}*/
+
+@media #{$medium} { }
+
+@media #{$large} { }
+
+@media #{$landscape} { }
+
+@media #{$portrait} { }
+
+// Shrink the form to a small size just for small width
+
+.touch .your-element {}
+
