@@ -6,12 +6,17 @@ require.config({
   shim: {
   	"libs/respond.min" : { },
 	"foundation/foundation" : { deps: ["jquery"], exports: 'jquery' },
+	//"foundation/foundation.alerts": { deps: ["jquery"], exports: 'jquery' },
+	//"foundation/foundation.cookie": { deps: ["jquery"], exports: 'jquery' },
 	"foundation/foundation.forms": { deps: ["jquery"], exports: 'jquery' },
+	//"foundation/foundation.placeholder": { deps: ["jquery"], exports: 'jquery' },
 	"foundation/foundation.reveal": { deps: ["jquery"], exports: 'jquery' },
 	"foundation/foundation.topbar": { deps: ["jquery"], exports: 'jquery' },
 	"foundation/jquery.offcanvas": { deps: ["jquery"], exports: 'jquery' },
+	//"libs/jquery.parallax-1.1.3": { deps: ["jquery"], exports: 'jquery' },
 	"libs/parsley": { deps: ["jquery"], exports: 'jquery' },
-	"libs/jquery.flexslider-min": { deps: ["jquery"], exports: 'jquery' }
+	"libs/jquery.flexslider-min": { deps: ["jquery"], exports: 'jquery' },
+	"libs/mediaelement-and-player.min": { deps: ["jquery"], exports: 'jquery' }
   }
 });
 
@@ -19,11 +24,16 @@ require(["modernizr",
 	"jquery",
 	"libs/respond.min",
 	"foundation/foundation",
+	//"foundation/foundation.alerts",
+	//"foundation/foundation.cookie",
 	"foundation/foundation.forms",
+ 	//"foundation/foundation.placeholder",
 	"foundation/foundation.reveal",
 	"foundation/foundation.topbar",
 	"foundation/jquery.offcanvas",
+	//"libs/jquery.parallax-1.1.3",
 	"libs/parsley",
+	"libs/mediaelement-and-player.min",
 	"libs/jquery.flexslider-min",
 ], function (modernizr, $) {
   	$(document).foundation();
